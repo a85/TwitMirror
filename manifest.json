@@ -1,0 +1,30 @@
+{
+    "name": "TwitMirror",
+    "version": "0.1",
+
+    "description": "Puts your tweets on the left rather than the right, making Twitter a lot less annoying.",
+    "icons": {
+        "16": "icon_16.png",
+        "32": "icon_32.png",
+        "48": "icon_48.png",
+        "128": "icon_128.png"
+    },
+
+    "page_action": {
+        "default_icon": "icon_32.png",
+        "default_title": "Fly left."
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://twitter.com/*", "http://www.twitter.com/*", "https://www.twitter.com/*"],
+            "js": ["mirror.js"]
+        }
+    ],
+
+    "run_at": "document_end",
+
+    "permissions": [
+        "tabs"
+    ]
+}
